@@ -54,7 +54,7 @@ export async function getStaticProps() {
     `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`,
     {
       headers: {
-        Authorization: `token ${process.env.GITHUB_API_KEY}`,
+        Authorization: `token ${process.env.API_KEY}`,
       },
     }
   );
@@ -64,7 +64,7 @@ export async function getStaticProps() {
     `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}/repos?per_page=100`,
     {
       headers: {
-        Authorization: `token ${process.env.GITHUB_API_KEY}`,
+        Authorization: `token ${process.env.API_KEY}`,
       },
     }
   );
