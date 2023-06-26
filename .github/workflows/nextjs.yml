@@ -48,6 +48,11 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
+      - name: Load environment variables
+        run: |
+          echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_GITHUB_USERNAME=${{ secrets.NEXT_PUBLIC_GITHUB_USERNAME }}" >> $GITHUB_ENV
+          echo "NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}" >> $GITHUB_ENV
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
