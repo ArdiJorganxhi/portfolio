@@ -33,15 +33,16 @@ jobs:
           echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
           echo "NEXT_PUBLIC_GITHUB_USERNAME=${{ secrets.NEXT_PUBLIC_GITHUB_USERNAME }}" >> $GITHUB_ENV
           echo "NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}" >> $GITHUB_ENV
-    - name: Deploy to ardijorganxhi.dev
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-          github_token: ${{ secrets.API_KEY }}
-          publish_dir: ./out
-          cname: ardijorganxhi.dev
+    
 
     
  
 
     - run: npm ci
     - run: npm run build --if-present
+    
+    - name: Deploy to ardijorganxhi.dev
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
