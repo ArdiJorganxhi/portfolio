@@ -44,5 +44,5 @@ jobs:
     - name: Deploy to ardijorganxhi.dev
       uses: peaceiris/actions-gh-pages@v3
       with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.API_KEY }}
           publish_dir: ./out
