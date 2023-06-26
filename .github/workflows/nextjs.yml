@@ -48,7 +48,8 @@ jobs:
             echo "Unable to determine package manager"
             exit 1
           fi
-      - name: Load environment variables
+     
+     - name: Load environment variables
         run: |
           echo "API_KEY=${{ secrets.API_KEY }}" >> $GITHUB_ENV
           echo "NEXT_PUBLIC_GITHUB_USERNAME=${{ secrets.NEXT_PUBLIC_GITHUB_USERNAME }}" >> $GITHUB_ENV
